@@ -673,7 +673,7 @@ DGtal::Viewer3D<Space, KSpace>::draw()
   glMultMatrixd ( manipulatedFrame()->matrix() );
   glPushMatrix();
   glScalef(myGLScaleFactorX, myGLScaleFactorY, myGLScaleFactorZ);
-  glLightfv(GL_LIGHT0, GL_POSITION, myLightPosition);
+  //glLightfv(GL_LIGHT0, GL_POSITION, myLightPosition);
   unsigned int i = 0;
   typename vector< typename Viewer3D<Space, KSpace>::ClippingPlaneD3D >::const_iterator it = Viewer3D<Space, KSpace>::myClippingPlaneList.begin();
   
