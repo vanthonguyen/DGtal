@@ -1,15 +1,47 @@
 # DGtal 0.9.2
 
+## New Features / Critical Changes
+
+## Changes
+- *Configuration/General*
+ - Cleaning remaining preprocessor directives related to C++11 features.
+   (Roland Denis, [#1141](https://github.com/DGtal-team/DGtal/pull/1141))
+ - Travis Continuous integration will check that DGtalTools still compiles with
+   changes in new pull-requests. (David Coeurjolly,
+   [#1133](https://github.com/DGtal-team/DGtal/pull/1133))
+
+- *Base Package*
+ - Alias and ConstAlias now raise compilation error when using invalid
+   constructor, like from a rvalue reference. Adding ConstAlias in many classes
+   that need it.
+   (Roland Denis, [#1140](https://github.com/DGtal-team/DGtal/pull/1140))
+
+- *IO Package*
+ - Add the possibility to interact in QGLViewer Viewer3D class with the voxel
+   primitive (was limited to surfel). As with surfel, the user may assign integer
+   identifiers (OpenGL names) to voxel and callback functions, which are called
+   when voxel are selected. The selected elements are now highlighted.
+   (Bertrand Kerautret, [#1146](https://github.com/DGtal-team/DGtal/pull/1146))
 
 ## Bug Fixes
+- *DEC Package*
+ - Fixing warnings in DiscreteExteriorCalculus and DiscreteExteriorCalculusFactory.
+   (Roland Denis, [#1139](https://github.com/DGtal-team/DGtal/pull/1139))
+
 - *Geometry Package*
+ - VoronoiCovarianceMeasure: fix dimension-specific code.
+   (Roland Denis, [#1145](https://github.com/DGtal-team/DGtal/pull/1145))
  - AlphaThickSegmentComputer: fix segment display errors which could appear
    when displaying a small segment. Fix a non initialized attribute with
    some improvements on bounding box computation with orientation check.
    (B. Kerautret, [#1123](https://github.com/DGtal-team/DGtal/pull/1123))
 
-
 - *IO Package*
+ - Display3D: Fix embedder usage when using default constructor in Debug mode.
+   (Roland Denis [##1143](https://github.com/DGtal-team/DGtal/pull/1143))
+ - Viewer3D: Fix a problem when the show() method was called at the end of the
+   main program (the list creation was not called).
+   (Bertrand Kerautret [##1138](https://github.com/DGtal-team/DGtal/pull/1138))
  - Viewer3D: add three new modes for shape rendering (default, metallic and
    plastic). The rendering can be changed by using the key M. The user can
    also choose its own rendering with some setter/getter on the opengl
@@ -20,6 +52,17 @@
    unix/mac. Changing reading mode with binary mode instead text mode fix
    the issue. (Bertrand Kerautret
    [#1130](https://github.com/DGtal-team/DGtal/pull/1130))
+ - Fixing issue [#899](https://github.com/DGtal-team/DGtal/issues/899) in
+   all color maps, (David Coeurjolly, Bertrand Kerautret
+   [#1134](https://github.com/DGtal-team/DGtal/pull/1134))
+-  GenericReader: include longvol reader in GenericReader for 64 bit images.
+   Update the test for 64 bit longvol. (Bertrand Kerautret
+   [#1135](https://github.com/DGtal-team/DGtal/pull/1135))
+
+- *Topology Package*
+  - Fix wrong starting point for surface tracking in example code
+    frontierAndBoundary.cpp.
+    (Roland Denis, [#1144](https://github.com/DGtal-team/DGtal/pull/1144))
 
 
 # DGtal 0.9.1
@@ -97,7 +140,7 @@
    the compiled library. This reduces compilation time when such types
    are used. (David Coeurjolly,
    [#1117](https://github.com/DGtal-team/DGtal/pull/1117))
-   
+
 - *DEC Package*
  - DiscreteExteriorCalculus holds both primal and dual sizes of each cell.
    Subsequent changes have been made to insertSCell.
