@@ -55,15 +55,25 @@
  - Fixing issue [#899](https://github.com/DGtal-team/DGtal/issues/899) in
    all color maps, (David Coeurjolly, Bertrand Kerautret
    [#1134](https://github.com/DGtal-team/DGtal/pull/1134))
--  GenericReader: include longvol reader in GenericReader for 64 bit images.
+ -  GenericReader: include longvol reader in GenericReader for 64 bit images.
    Update the test for 64 bit longvol. (Bertrand Kerautret
    [#1135](https://github.com/DGtal-team/DGtal/pull/1135))
+ - Fix the extension removal in Obj filename export in Board3D. (David
+   Coeurjolly,[#1154](https://github.com/DGtal-team/DGtal/pull/1154)))
 
 - *Topology Package*
   - Fix wrong starting point for surface tracking in example code
     frontierAndBoundary.cpp.
     (Roland Denis, [#1144](https://github.com/DGtal-team/DGtal/pull/1144))
+  - Fix interior/exterior fill methods of topology/helpers/Surfaces class which
+    was wrong on 3d and on closed Khalimsky space.
+    (Bertrand Kerautret, [#1156](https://github.com/DGtal-team/DGtal/pull/1156))
 
+- *Shape Package*
+  - Fix a tubular mesh construction problem (missing faces) which appears
+    when the center line is oriented in a main axis direction (in
+    createTubularMesh()). Also improves and fixes the face construction.
+    (Bertrand Kerautret, [#1157](https://github.com/DGtal-team/DGtal/pull/1157))
 
 # DGtal 0.9.1
 
