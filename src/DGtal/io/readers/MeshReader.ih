@@ -53,6 +53,7 @@ DGtal::MeshReader<TPoint>::importOFFFile(const std::string & aFilename,
 					 DGtal::Mesh<TPoint> & aMesh, 
 					 bool invertVertexOrder) throw(DGtal::IOException)
 {
+  unsigned int nbVertexInitial = aMesh.nbVertex();
   std::ifstream infile;
   DGtal::IOException dgtalio;
   try 
@@ -115,7 +116,7 @@ DGtal::MeshReader<TPoint>::importOFFFile(const std::string & aFilename,
     for (unsigned int j=0; j< aNbFaceVertex; j++){
       unsigned int anIndex;
       infile >> anIndex;
-      aFace.push_back(anIndex);
+      aFace.push_back(nbVertexInitial + anIndex);
     }
     if( invertVertexOrder ){
       for(unsigned int j=0; j < aFace.size()/2; j++){
